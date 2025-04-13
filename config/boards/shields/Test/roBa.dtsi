@@ -6,6 +6,18 @@
         zmk,physical-layout = &roba_physical_layout;
     };
     
+    analog_stick_x: analog_stick_x {
+        compatible = "zmk,analog-input";
+        status = "okay";
+        #binding-cells = <1>;
+    };
+
+    analog_stick_y: analog_stick_y {
+        compatible = "zmk,analog-input";
+        status = "okay";
+        #binding-cells = <1>;
+    };
+    
     roba_physical_layout: roba_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";

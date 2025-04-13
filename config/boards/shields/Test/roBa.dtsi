@@ -17,6 +17,18 @@
         status = "okay";
         #binding-cells = <1>;
     };
+
+    analog_mouse_x: analog_mouse_x {
+        compatible = "zmk,behavior-analog-mouse";
+        #binding-cells = <0>;
+        status = "okay";
+    };
+
+    analog_mouse_y: analog_mouse_y {
+        compatible = "zmk,behavior-analog-mouse";
+        #binding-cells = <0>;
+        status = "okay";
+    };
     
     roba_physical_layout: roba_physical_layout {
         compatible = "zmk,physical-layout";

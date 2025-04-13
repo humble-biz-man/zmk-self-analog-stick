@@ -21,7 +21,7 @@
         label = "X_AXIS";
     };
 
-    analog_stick_y: analog_input@1 {
+    analog_input_y: analog_input@1 {
         status = "okay";
         io-channels = <&adc 1>;
         label = "Y_AXIS";

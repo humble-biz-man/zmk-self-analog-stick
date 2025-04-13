@@ -9,11 +9,13 @@
     analog_stick_x: analog_stick_x {
         compatible = "zmk,analog-input";
         status = "okay";
+        bindings = <&analog_mouse_x>;
     };
 
     analog_stick_y: analog_stick_y {
         compatible = "zmk,analog-input";
         status = "okay";
+        bindings = <&analog_mouse_y>;
     };
 
     analog_mouse_x: analog_mouse_x {

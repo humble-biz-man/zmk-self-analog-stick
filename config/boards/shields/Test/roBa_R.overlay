@@ -15,7 +15,7 @@
 };
 
 / {
-    analog_stick_x: analog_input@0 {
+    analog_input_x: analog_input@0 {
         status = "okay";
         io-channels = <&adc 0>;
         label = "X_AXIS";

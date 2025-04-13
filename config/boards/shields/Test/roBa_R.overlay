@@ -17,12 +17,14 @@
 / {
     analog_input_x: analog_input@0 {
         status = "okay";
+        reg = <0>;
         io-channels = <&adc 0>;
         label = "X_AXIS";
     };
 
     analog_input_y: analog_input@1 {
         status = "okay";
+        reg = <1>;
         io-channels = <&adc 1>;
         label = "Y_AXIS";
     };

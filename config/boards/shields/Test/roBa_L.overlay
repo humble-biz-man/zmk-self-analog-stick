@@ -16,9 +16,7 @@
 };
 
 &analog_stick_x {
-    io-channels = <&adc 0>;
 };
 
 &analog_stick_y {
-    io-channels = <&adc 1>;
 };

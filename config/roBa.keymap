@@ -13,6 +13,14 @@
     quick-tap-ms = <0>;
 };
 
+&analog_stick_x {
+    bindings = <&analog_mouse_x>;
+};
+
+&analog_stick_y {
+    bindings = <&analog_mouse_y>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";

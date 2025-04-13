@@ -15,10 +15,21 @@
 };
 
 / {
+    analog_stick_x: analog_input@0 {
+        status = "okay";
+        io-channels = <&adc 0>;
+        label = "X_AXIS";
+    };
+
+    analog_stick_y: analog_input@1 {
+        status = "okay";
+        io-channels = <&adc 1>;
+        label = "Y_AXIS";
+    };
+
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-
     };
 };
 

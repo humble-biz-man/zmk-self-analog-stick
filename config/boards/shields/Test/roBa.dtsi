@@ -39,6 +39,13 @@
         };
     };
 
+    stick_button: stick_button {
+        compatible = "zmk,keyboard-scan";
+        debounce-press-ms = <1>;
+        debounce-release-ms = <5>;
+        row-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    };
+
     analog_mouse_x: analog_mouse_x {
         compatible = "zmk,behavior-analog-mouse";
         #binding-cells = <0>;

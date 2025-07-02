@@ -41,7 +41,7 @@
 
     gpio1_button: gpio1_button {
         compatible = "zmk,gpio-input";
-        gpios = <&gpio0 1 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+        gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;
         label = "JOY_PRESS";
         keycodes = <&kp ENTER>;
     };

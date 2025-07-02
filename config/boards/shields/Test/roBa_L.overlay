@@ -15,6 +15,10 @@
     status = "okay";
 };
 
+&adc {
+    status = "okay";
+};
+
 / {
     analog_stick_button: analog_stick_button {
         gpios = <&gpio0 1 3>;

@@ -1,5 +1,4 @@
 #include "roBa.dtsi"
-#include <dt-bindings/zmk/hid_usage.h>
 
 &default_transform {
     col-offset = <6>;
@@ -40,13 +39,6 @@
         deadzone = <100>;
         scale = <1>;
         offset = <2048>;
-    };
-
-    gpio1_button: gpio1_button {
-        compatible = "zmk,gpio-input";
-        gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;
-        label = "JOY_PRESS";
-        keycodes = <ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_ENTER)>;
     };
 };
 

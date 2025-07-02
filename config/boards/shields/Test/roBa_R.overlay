@@ -1,4 +1,5 @@
 #include "roBa.dtsi"
+#include <dt-bindings/zmk/hid_usage.h>
 
 &default_transform {
     col-offset = <6>;
@@ -22,7 +23,7 @@
     };
 
     //
-    
+
     analog_x: analog_x {
         compatible = "zmk,analog-input";
         io-channels = <&adc 4>; // X軸（A4 = ADC4）
@@ -45,7 +46,7 @@
         compatible = "zmk,gpio-input";
         gpios = <&gpio0 1 GPIO_ACTIVE_LOW>;
         label = "JOY_PRESS";
-        keycodes = <&kp ENTER>;
+        keycodes = <ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_ENTER)>;
     };
 };
 

@@ -20,6 +20,13 @@
         device = <&trackball>;
 
     };
+
+    analog_stick_button: analog_stick_button {
+        gpios = <&gpio0 1 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+        label = "ANALOG_STICK_BTN";
+        compatible = "zmk,behavior-momentary";
+        bindings = <&kp KC_BTN1>;
+    };
 };
 
 &pinctrl {
@@ -74,12 +81,6 @@
         zephyr,input-positive = <5>; // SCLK (A5, ピン6)
         label = "STICK_Y";
     };
-};
-
-&analog_stick_button {
-    compatible = "zmk,behavior-momentary";
-    label = "Analog Stick Button";
-    bindings = <&kp KC_BTN1>;
 };
 
 

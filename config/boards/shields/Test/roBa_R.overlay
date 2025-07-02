@@ -20,6 +20,31 @@
         device = <&trackball>;
 
     };
+
+    analog_x: analog_x {
+        compatible = "zmk,analog-input";
+        io-channels = <&adc 4>; // X軸（A4 = ADC4）
+        label = "X_AXIS";
+        deadzone = <100>;
+        scale = <1>;
+        offset = <2048>;
+    };
+
+    analog_y: analog_y {
+        compatible = "zmk,analog-input";
+        io-channels = <&adc 5>; // Y軸（A5 = ADC5）
+        label = "Y_AXIS";
+        deadzone = <100>;
+        scale = <1>;
+        offset = <2048>;
+    };
+
+    gpio1_button: gpio1_button {
+        compatible = "zmk,gpio-input";
+        gpios = <&gpio0 1 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+        label = "JOY_PRESS";
+        keycodes = <&kp ENTER>; // 任意のキー
+    };
 };
 
 &pinctrl {
@@ -60,6 +85,10 @@
         // automouse-layer = <4>;  // この行を削除またはコメントアウト
         scroll-layers = <5>;
     };
+};
+
+&adc {
+    status = "okay";
 };
 
 

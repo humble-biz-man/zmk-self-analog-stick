@@ -21,6 +21,8 @@
 
     };
 
+    //
+    
     analog_x: analog_x {
         compatible = "zmk,analog-input";
         io-channels = <&adc 4>; // X軸（A4 = ADC4）

@@ -14,7 +14,7 @@ manifest:
       revision: main
     - name: zmk-self-analog-stick
       path: modules/zmk-self-analog-stick
-      url: .
+      url: https://github.com/humble-biz-man/zmk-self-analog-stick.git
       revision: main
       import: false
   self:

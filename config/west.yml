@@ -15,6 +15,7 @@ manifest:
     - name: zmk-self-analog-stick
       path: modules/zmk-self-analog-stick
       url: .
+      revision: main
       import: false
   self:
     path: config

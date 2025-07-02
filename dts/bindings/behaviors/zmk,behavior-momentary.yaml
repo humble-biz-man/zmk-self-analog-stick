@@ -8,7 +8,7 @@ properties:
     type: phandle-array
     required: true
 
-  #binding-cells:
-    type: int
-    required: true
-    const: 0 
+required:
+  - gpios
+
+binding-cells: 0

@@ -25,6 +25,8 @@
         gpios = <&gpio0 1 3>;
         label = "ANALOG_STICK_BTN";
         compatible = "zmk,behavior-momentary";
+        bindings = <&kp KC_BTN1>;
+        #binding-cells = <0>;
     };
 };
 

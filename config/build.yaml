@@ -1,0 +1,4 @@
+name: roBa
+build:
+  cmake-args: >
+    -DZMK_EXTRA_MODULES=modules/zmk-analog-input-driver

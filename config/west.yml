@@ -12,5 +12,9 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: kumamuk-git
       revision: main
+    - name: zmk-self-analog-stick
+      path: modules/zmk-self-analog-stick
+      revision: main
+      import: false
   self:
     path: config

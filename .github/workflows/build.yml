@@ -1,48 +1,5 @@
-name: ZMK Custom Build
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-  workflow_dispatch:
+on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.12'
-
-      - name: Install west and dependencies
-        run: |
-          pip install west
-          sudo apt-get update
-          sudo apt-get install -y ninja-build gperf ccache dfu-util device-tree-compiler wget python3-pip
-        shell: bash
-
-      - name: Init west workspace
-        run: |
-          west init -l config
-          west update
-        shell: bash
-
-      - name: Build firmware
-        run: |
-          west build -s zmk/app -b seeeduino_xiao_ble \
-            -- \
-            -DZMK_CONFIG=config \
-            -DSHIELD=roBa_R \
-            -DZMK_EXTRA_MODULES=modules/zmk-self-analog-stick
-        shell: bash
-
-      - name: Upload firmware artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: zmk-firmware
-          path: build/zephyr/zmk.uf2
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main

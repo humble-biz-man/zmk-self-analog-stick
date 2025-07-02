@@ -14,9 +14,3 @@
 &left_encoder {
     status = "okay";
 };
-
-&analog_stick_x {
-};
-
-&analog_stick_y {
-};

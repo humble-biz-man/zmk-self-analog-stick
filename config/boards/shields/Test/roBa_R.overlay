@@ -15,23 +15,10 @@
 };
 
 / {
-    analog_input_x: analog_input@0 {
-        status = "okay";
-        reg = <0 1>;
-        io-channels = <&adc 0>;
-        label = "X_AXIS";
-    };
-
-    analog_input_y: analog_input@1 {
-        status = "okay";
-        reg = <1 1>;
-        io-channels = <&adc 1>;
-        label = "Y_AXIS";
-    };
-
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
+
     };
 };
 

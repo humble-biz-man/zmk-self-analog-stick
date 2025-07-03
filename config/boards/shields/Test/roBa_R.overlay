@@ -21,25 +21,41 @@
 
     };
 
-    //
-
-    analog_x: analog_x {
+    // ▼ ここから analog input driver のノードを追加
+    anin0: analog_input_0 {
         compatible = "zmk,analog-input";
-        io-channels = <&adc 4>; // X軸（A4 = ADC4）
-        label = "X_AXIS";
-        deadzone = <100>;
-        scale = <1>;
-        offset = <2048>;
-    };
+        sampling-hz = <100>;  // サンプリング周波数
 
-    analog_y: analog_y {
-        compatible = "zmk,analog-input";
-        io-channels = <&adc 5>; // Y軸（A5 = ADC5）
-        label = "Y_AXIS";
-        deadzone = <100>;
-        scale = <1>;
-        offset = <2048>;
+        x-ch {
+            io-channels = <&adc 2>;     // AIN2 (P0.04)
+            mv-mid = <1630>;            // 中心値（例: 3.3V系ADCの半分）
+            mv-min-max = <1600>;        // ±1.6V相当
+            mv-deadzone = <10>;         // デッドゾーン
+            scale-multiplier = <1>;
+            scale-divisor = <70>;
+            invert;
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_X>;
+        };
+
+        y-ch {
+            io-channels = <&adc 3>;     // AIN3 (P0.05)
+            mv-mid = <1630>;
+            mv-min-max = <1600>;
+            mv-deadzone = <10>;
+            scale-multiplier = <3>;
+            scale-divisor = <4>;
+            invert;
+            evt-type = <INPUT_EV_REL>;
+            input-code = <INPUT_REL_Y>;
+            report-on-change-only;
+        };
     };
+};
+
+// ADC を有効化
+&adc {
+    status = "okay";
 };
 
 &pinctrl {
@@ -80,10 +96,6 @@
         // automouse-layer = <4>;  // この行を削除またはコメントアウト
         scroll-layers = <5>;
     };
-};
-
-&adc {
-    status = "okay";
 };
 
 

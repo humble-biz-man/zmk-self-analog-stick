@@ -1,4 +1,11 @@
 #include "roBa.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+/* Reference: https://docs.zephyrproject.org/apidoc/latest/group__input__events.html */
+
+// ADC を有効化
+&adc {
+	status = "okay";
+};
 
 &default_transform {
     col-offset = <6>;
@@ -51,11 +58,6 @@
             report-on-change-only;
         };
     };
-};
-
-// ADC を有効化
-&adc {
-    status = "okay";
 };
 
 &pinctrl {

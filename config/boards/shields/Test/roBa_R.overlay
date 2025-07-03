@@ -34,7 +34,7 @@
         sampling-hz = <100>;  // サンプリング周波数
 
         x-ch {
-            io-channels = <&adc 2>;     // AIN2 (P0.04)
+            io-channels = <&adc 4>;     // AIN2 (P0.04)
             mv-mid = <1630>;            // 中心値（例: 3.3V系ADCの半分）
             mv-min-max = <1600>;        // ±1.6V相当
             mv-deadzone = <10>;         // デッドゾーン
@@ -46,7 +46,7 @@
         };
 
         y-ch {
-            io-channels = <&adc 3>;     // AIN3 (P0.05)
+            io-channels = <&adc 5>;     // AIN3 (P0.05)
             mv-mid = <1630>;
             mv-min-max = <1600>;
             mv-deadzone = <10>;
